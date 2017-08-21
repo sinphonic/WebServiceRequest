@@ -44,7 +44,7 @@ all: WebServiceRequest
 WebServiceRequest: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "WebServiceRequest" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -o "WebServiceRequest" $(OBJS) $(USER_OBJS) $(LIBS) -lcurl -Wl,-Bsymbolic-functions -Wl,-z,relro
 	@echo 'Finished building target: $@'
 	@echo ' '
 
